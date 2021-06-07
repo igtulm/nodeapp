@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+
+  postgres:
+    image: 'postgres:12.0'
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 6543:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+
+volumes:
+  db-data:
+    driver: local
